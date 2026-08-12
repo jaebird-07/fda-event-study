@@ -1,0 +1,16 @@
+# Vertex Pharmaceuticals: Journavx non-opiod treatment for acute pain 
+- opid drugs: chemicals that bind to receptors in nervous system to block pain signals 
+eg. morphine, oxycodone, fentanyl
+- acute pain: sudden, sharp physical discomfort, lasts short time
+
+# AZ: Datroway for HR-positive HER2-negative breast cancer
+drug contains antibody that locks onto Trop-2 (protein found on cancer cell), cancer cell engulfs the drug, drug releases chemotherapy drug DXd 
+
+- HR positive (hormone receptor): breast cancer cells that have receptors attaching to estrogen/progesterone/both
+(responds to hormone treatment, grows slower than HR negative type)
+- HER2-negative breast cancer: do not overproduct human epidermal growth factor receptor 2 protein 
+    - HR positve type: uses hormones (progesterone/estrogen) to grow slowly (hormone therapy work)
+    - HR negative (triple negative): destroyed by antibody drug conjugates (ADCs) 
+
+# GSK: Blujepa for uncomplicated UTI
+- limited only to urinary tract 
