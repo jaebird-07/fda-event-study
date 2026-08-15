@@ -1,7 +1,7 @@
 import yfinance as yf
 import pandas as pd
 
-data = yf.download("AZN", start="2026-07-01", end="2026-07-20", auto_adjust=True)
+data = yf.download("AZN", start="2025-09-01", end="2026-07-31", auto_adjust=True)
 print(data)
 
 close_prices = data["Close"]
@@ -12,7 +12,7 @@ azn_close = close_prices["AZN"]
 print(azn_close)
 print(type(azn_close))
 
-data = yf.download("^GSPC", start="2026-07-01", end="2026-07-20", auto_adjust=True)
+data = yf.download("^GSPC", start="2025-09-01", end="2026-07-31", auto_adjust=True)
 print(data)
 
 close_prices = data["Close"]
@@ -28,3 +28,6 @@ print(combined)
 
 returns = combined.pct_change()
 print(returns)
+
+combined.to_csv("data/azn_gspc_prices.csv")
+returns.to_csv("data/azn_gspc_returns.csv")
