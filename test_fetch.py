@@ -54,3 +54,14 @@ post_event = returns.iloc[218:227]
 print("Post-event window:")
 print(post_event.index[0])
 print(post_event.index[-1])
+
+from scipy.stats import linregress
+
+result = linregress(estimation_window["^GSPC"], estimation_window["AZN"])
+print("beta:", result.slope)
+print("alpha:", result.intercept)
+
+predicted_AZN = result.intercept + result.slope * event_window["^GSPC"]
+abnormal_return = event_window["AZN"] - predicted_AZN
+print("Abnormal return in event window:")
+print(abnormal_return)
