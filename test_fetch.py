@@ -61,7 +61,24 @@ result = linregress(estimation_window["^GSPC"], estimation_window["AZN"])
 print("beta:", result.slope)
 print("alpha:", result.intercept)
 
-predicted_AZN = result.intercept + result.slope * event_window["^GSPC"]
-abnormal_return = event_window["AZN"] - predicted_AZN
+
+predicted_AZN_event = result.intercept + result.slope * event_window["^GSPC"]
+abnormal_return_event = event_window["AZN"] - predicted_AZN_event
 print("Abnormal return in event window:")
-print(abnormal_return)
+print(abnormal_return_event)
+car_event = abnormal_return_event.sum()
+print("CAR event window:", car_event)
+
+predicted_AZN_post = result.intercept + result.slope * post_event["^GSPC"]
+abnormal_return_post = post_event["AZN"] - predicted_AZN_post
+print("Abnormal return in post event:")
+print(abnormal_return_post)
+car_post_event = abnormal_return_post.sum()
+print("CAR post event:", car_post_event)
+
+predicted_AZN_pre = result.intercept + result.slope * pre_event["^GSPC"]
+abnormal_return_pre = pre_event["AZN"] - predicted_AZN_pre
+print("Abnormal return in pre event:")
+print(abnormal_return_pre)
+car_pre_event = abnormal_return_pre.sum()
+print("CAR pre event:", car_pre_event)
