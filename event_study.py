@@ -48,5 +48,30 @@ def run_event_study(ticker, event_date, benchmark="^GSPC"):
     }
 
 
-result = run_event_study("AZN", "2026-07-14")
-print(result)
+events = [
+    ("AZN", "2026-07-14"),
+    ("VRTX", "2025-01-30"),
+    ("GSK", "2025-03-25"),
+    ("SNY", "2025-03-28"),
+    ("NVS", "2025-04-02"),
+    ("JNJ", "2025-04-30"),
+    ("ABBV", "2025-05-14"),
+    ("NUVB", "2025-06-11"),
+    ("REGN", "2025-07-02"),
+    ("INSM", "2025-08-12"),
+    ("MRK", "2025-09-19"),
+    ("LLY", "2025-09-25"),
+    ("KURA", "2025-11-13"),
+    ("ARWR", "2025-11-18"),
+    ("CYTK", "2025-12-19"),
+]
+
+results = []
+for ticker, event_date in events:
+    print(f"Running event study for {ticker} ({event_date})...")
+    result = run_event_study(ticker, event_date)
+    results.append(result)
+
+results_df = pd.DataFrame(results)
+print(results_df)
+results_df.to_csv("data/car_results.csv", index=False)
